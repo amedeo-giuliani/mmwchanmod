@@ -56,6 +56,7 @@ class CondVAE(object):
         self.ndat = ndat        
         self.ncond = ncond
         self.nunits_enc = nunits_enc
+        self.nunits_dec = nunits_dec
         self.out_var_min = out_var_min
         self.nsort = nsort
         self.init_kernel_stddev = init_kernel_stddev
