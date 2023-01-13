@@ -44,13 +44,13 @@ parser.add_argument(\
     default='plots', help='directory for the output plots')    
 parser.add_argument(\
     '--plot_fn',action='store',\
-    default='pl_cdf.png', help='plot file name')        
+    default='dly_cdf.png', help='plot file name')        
 parser.add_argument(\
     '--ds_city',action='store',\
-    default='LonTok', help='data set to load')    
+    default='Boston', help='data set to load')    
 parser.add_argument(\
     '--model_city',action='store',\
-    default='LonTok Beijing', help='cities for the models to test')    
+    default='Boston Beijing', help='cities for the models to test')    
         
 args = parser.parse_args()
 plot_dir = args.plot_dir
@@ -58,15 +58,15 @@ ds_city = args.ds_city
 model_city = args.model_city
 plot_fn = args.plot_fn
 
-# Overwrite command line if running from spyder
-if 0:
-    ds_city = 'LonTok'
-    model_city = 'LonTok'
-    plot_fn = 'dly_cdf_lt.png'
-if 1:
-    ds_city = 'LonTok'
-    model_city = 'LonTok Moscow Beijing Boston'
-    plot_fn = 'dly_cdf_all.png'
+# # Overwrite command line if running from spyder
+# if 0:
+#     ds_city = 'LonTok'
+#     model_city = 'LonTok'
+#     plot_fn = 'dly_cdf_lt.png'
+# if 1:
+#     ds_city = 'LonTok'
+#     model_city = 'LonTok Moscow Beijing Boston'
+#     plot_fn = 'dly_cdf_all.png'
 
 # Cities to test are the city for the followed by all the models
 city_test = [ds_city] + model_city.split()

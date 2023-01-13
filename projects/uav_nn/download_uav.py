@@ -13,10 +13,12 @@ if not path in sys.path:
 from mmwchanmod.datasets.download import list_datasets, get_dataset, concat_datasets
 
 # Datasets to download
-ds_names = ['uav_london', 'uav_tokyo']
+# ds_names = ['uav_london', 'uav_tokyo']
+ds_names = ['uav_london', 'uav_boston']
 
 # Concatanated dataset
-out_name = 'uav_lon_tok'
+# out_name = 'uav_lon_tok'
+out_name = 'uav_lon_bos'
 
 # Downloads the datasets from the server, if needed
 for ds in ds_names:

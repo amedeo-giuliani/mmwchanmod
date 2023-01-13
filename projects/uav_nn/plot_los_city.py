@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import os
 import sys
 from scipy.interpolate import interp1d
+import itertools
 
 path = os.path.abspath('../..')
 if not path in sys.path:
@@ -18,7 +19,8 @@ from mmwchanmod.learn.datastats import hist_mean
 
 
 # Cities to plot
-cities = ['boston', 'london', 'beijing', 'moscow', 'tokyo']
+# cities = ['boston', 'london', 'beijing', 'moscow', 'tokyo']
+cities = ['boston', 'london', 'beijing']
 
 # Distance to sort the line
 d0 = 300
@@ -76,9 +78,11 @@ for it in range(ntypes):
     # Plot the LOS probability for each city
     ncity = len(cities)
     leg_str = []
-    for i in I:    
+    # for i in I:
+    for i, m in zip(I, itertools.cycle('osd')):
         leg_str.append(cities[i])
-        ax[it].plot(dcen[i], plos[i], 'o-')
+        # ax[it].plot(dcen[i], plos[i], 'o-')
+        ax[it].plot(dcen[i], plos[i], marker=m)
     ax[it].legend(leg_str)
     ax[it].grid()
     ax[it].set_xlabel('Horiz distance (m)')

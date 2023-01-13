@@ -47,10 +47,10 @@ parser.add_argument(\
     default='pl_cdf.png', help='plot file name')        
 parser.add_argument(\
     '--ds_city',action='store',\
-    default='LonTok', help='data set to load')    
+    default='LonBos', help='data set to load')    
 parser.add_argument(\
     '--model_city',action='store',\
-    default='LonTok Beijing', help='cities for the models to test')    
+    default='LonBos Beijing', help='cities for the models to test')    
         
 args = parser.parse_args()
 plot_dir = args.plot_dir
@@ -58,26 +58,21 @@ ds_city = args.ds_city
 model_city = args.model_city
 plot_fn = args.plot_fn
 
-# Overwrite command line if running from spyder
-if 0:
-    ds_city = 'LonTok'
-    model_city = 'LonTok'
-    plot_fn = 'pl_cdf_lt.png'
-if 1:
-    ds_city = 'LonTok'
-    model_city = 'LonTok Moscow Beijing Boston'
-    plot_fn = 'pl_cdf_all.png'
+
 
 # Cities to test are the city for the followed by all the models
 city_test = [ds_city] + model_city.split()
+print(city_test)
 
 
 # Dictionaries looking up the model to use for each city  
 model_city_dict  = {\
     'LonTok': ('uav_lon_tok', None), # OK\
-    'Beijing': ('uav_beijing',None), # OK\
-    'Boston': ('uav_boston',None),  # Good\    
-    'Moscow': ('uav_moscow',None)}  # Good
+    'Beijing': ('uav_beijing', None), # OK\
+    'Boston': ('uav_boston', None),  # Good\    
+    'Moscow': ('uav_moscow', None),  # Good\
+    'LonBos': ('uav_lon_bos', None)
+}
     
     
 # Dictionaries looking up the dataset for each city  
@@ -85,7 +80,9 @@ ds_city_dict = {\
     'LonTok': 'uav_lon_tok',\
     'Beijing': 'uav_beijing',\
     'Boston':  'uav_boston',\
-    'Moscow':  'uav_moscow'    }   
+    'Moscow':  'uav_moscow',\
+    'LonBos': 'uav_lon_bos'
+}   
     
 use_true_ls = False
     
@@ -106,7 +103,7 @@ for i, city in enumerate(city_test):
         """
         # Load the data
         ds = ds_city_dict[city]
-        data_dict = get_dataset(ds)
+        data_dict = get_dataset(ds, src='local')
         cfg = data_dict['cfg']    
         data = data_dict['test_data']
         

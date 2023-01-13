@@ -55,7 +55,7 @@ parser.add_argument('--nunits_link',action='store',nargs='+',\
     default=[50,25],type=int,\
     help='num hidden units for the link state predictor')        
 parser.add_argument('--model_dir',action='store',\
-    default= '../../models/uav_boston', help='directory to store models')
+    default= '../../models/uav_beijing', help='directory to store models')
 parser.add_argument('--no_fit_link', dest='no_fit_link', action='store_true',\
     help="Does not fit the link model")
 parser.add_argument('--no_fit_path', dest='no_fit_path', action='store_true',\
@@ -69,7 +69,7 @@ parser.add_argument(\
     default='../../data', help='directory of the data file')
 parser.add_argument(\
     '--ds_name',action='store',\
-    default='uav_lon_tok', help='dataset within the data directory')
+    default='uav_beijing', help='dataset within the data directory')
     
 
 args = parser.parse_args()
@@ -139,7 +139,7 @@ chan_mod = ChanMod(nlatent=nlatent,cfg=cfg,\
                    nunits_link=nunits_link,\
                    out_var_min=out_var_min,\
                    init_bias_stddev=init_stddev,\
-                   init_kernel_stddev=init_stddev, model_dir=model_dir)    
+                   init_kernel_stddev=init_stddev, model_dir=model_dir)
 chan_mod.save_config()
 
 """
@@ -159,7 +159,7 @@ if fit_link:
     
 else:
     # Load the link model
-    chan_mod.load_link_model()  
+    chan_mod.load_link_model()
 
 """
 Train the path loss model

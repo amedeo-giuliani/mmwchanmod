@@ -131,8 +131,8 @@ class CondVAE(object):
         # Hidden layers
         layer_names = []
         h = z_cond
-        for i in range(len(self.nunits_enc)):            
-            h = tfkl.Dense(self.nunits_enc[i], activation='sigmoid',\
+        for i in range(len(self.nunits_dec)):            
+            h = tfkl.Dense(self.nunits_dec[i], activation='sigmoid',\
                            bias_initializer=None, name='FC%d' % i)(h)
             layer_names.append('FC%d' % i)
             
