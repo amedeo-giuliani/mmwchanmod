@@ -17,13 +17,23 @@ tfkl = tf.keras.layers
 import tensorflow.keras.backend as K
 import argparse
 
-
 path = os.path.abspath('../..')
 if not path in sys.path:
     sys.path.append(path)
-    
+
 from mmwchanmod.learn.models import ChanMod
 from mmwchanmod.datasets.download import get_dataset
+
+GPU_mode = True
+
+if GPU_mode:
+    num_GPU = 3 # choose among available GPUs
+    mem_growth = True
+    gpus = tf.config.experimental.list_physical_devices("GPU")
+    print('Number of GPUs available :', len(gpus))
+    tf.config.experimental.set_visible_devices(gpus[num_GPU], 'GPU')
+    tf.config.experimental.set_memory_growth(gpus[num_GPU], mem_growth)
+    print('Used GPU: {}. Memory growth: {}'.format(num_GPU, mem_growth))
 
 """
 Parse arguments from command line
