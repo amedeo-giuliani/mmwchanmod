@@ -41,7 +41,7 @@ Parse arguments from command line
 parser = argparse.ArgumentParser(description='Plots the omni directional path loss CDF')
 parser.add_argument(\
     '--plot_dir',action='store',\
-    default='plots', help='directory for the output plots')    
+    default='../../plots', help='directory for the output plots')    
 parser.add_argument(\
     '--plot_fn',action='store',\
     default='pl_cdf.png', help='plot file name')        
@@ -71,22 +71,23 @@ model_city_dict  = {\
     'Beijing': ('uav_beijing', None), # OK\
     'Boston': ('uav_boston', None),  # Good\    
     'Moscow': ('uav_moscow', None),  # Good\
-    'LonBos': ('uav_lon_bos', None)
+    'LonBos': ('uav_lon_bos', None),
+    'London': ('uav_london', None)
 }
-    
-    
+
 # Dictionaries looking up the dataset for each city  
 ds_city_dict = {\
     'LonTok': 'uav_lon_tok',\
     'Beijing': 'uav_beijing',\
     'Boston':  'uav_boston',\
     'Moscow':  'uav_moscow',\
-    'LonBos': 'uav_lon_bos'
-}   
-    
+    'LonBos': 'uav_lon_bos',\
+    'London': 'uav_london'
+}
+
 use_true_ls = False
-    
-     
+
+
 """
 Find the path loss CDFs
 """
@@ -96,7 +97,7 @@ leg_str = []
 
 ntest = len(city_test)
 for i, city in enumerate(city_test):
-    
+
     if (i == 0):
         """
         For first city, use the city data
