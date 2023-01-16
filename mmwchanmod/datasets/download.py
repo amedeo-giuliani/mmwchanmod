@@ -331,7 +331,7 @@ def load_model(mod_name, src='remote', overwrite=False,\
     # Create the local data directory if needed    
     # mod_root = os.path.join(os.path.dirname(__file__),'..','..','models')
     # mod_root = os.path.abspath(mod_root)
-    mod_root = os.path.join('models')
+    mod_root = os.path.join('../../','models')
     print(mod_root)
     if not os.path.exists(mod_root):
         os.mkdir(mod_root)
