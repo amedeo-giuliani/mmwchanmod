@@ -26,7 +26,7 @@ Parse arguments from command line
 parser = argparse.ArgumentParser(description='Plots the SNR distribution')    
 parser.add_argument(\
     '--plot_dir',action='store',\
-    default='plots', help='directory for the output plots')    
+    default='../../plots', help='directory for the output plots')    
 parser.add_argument(\
     '--plot_fn',action='store',\
     default='snr_coverage.png', help='plot file name')        

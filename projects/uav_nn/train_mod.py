@@ -47,7 +47,7 @@ parser.add_argument('--nepochs_link',action='store',default=10,type=int,\
     help='number of epochs for training the link model')
 parser.add_argument('--lr_link',action='store',default=1e-3,type=float,\
     help='learning rate for the link model')   
-parser.add_argument('--nepochs_path',action='store',default=5000,type=int,\
+parser.add_argument('--nepochs_path',action='store',default=10000,type=int,\
     help='number of epochs for training the path model')
 parser.add_argument('--lr_path',action='store',default=1e-4,type=float,\
     help='learning rate for the path model')     
@@ -62,7 +62,7 @@ parser.add_argument('--nunits_dec',action='store',nargs='+',\
     default=[80,200],type=int,\
     help='num hidden units for the decoder')    
 parser.add_argument('--nunits_link',action='store',nargs='+',\
-    default=[50,25],type=int,\
+    default=[25,10],type=int,\
     help='num hidden units for the link state predictor')        
 parser.add_argument('--model_dir',action='store',\
     default= '../../models/uav_beijing', help='directory to store models')
@@ -126,6 +126,7 @@ if batch_ind >= 0:
 if batch_ind >= 0:
     print('batch_ind=%d' % batch_ind)
 print('model_dir= %s' % model_dir)
+print('nunits_link=%s' % str(nunits_link))
 print('nunits_enc=%s' % str(nunits_enc))
 print('nunits_dec=%s' % str(nunits_dec))
 print('lr_path=%12.4e' % lr_path)

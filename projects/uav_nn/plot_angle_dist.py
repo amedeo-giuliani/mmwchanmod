@@ -31,7 +31,7 @@ Parse arguments from command line
 parser = argparse.ArgumentParser(description='Plots the omni directional path loss CDF')
 parser.add_argument(\
     '--plot_dir',action='store',\
-    default='plots', help='directory for the output plots')    
+    default='../../plots', help='directory for the output plots')    
 parser.add_argument(\
     '--plot_fn',action='store',\
     default='angle_dist.png', help='plot file name')        
@@ -186,11 +186,4 @@ if 1:
     # Save the figure
     plot_path = os.path.join(plot_dir, plot_fn)
     plt.savefig(plot_path)
-    
-    
-    
-
-
-    
-
-
+    print('saved fig:', plot_path)
