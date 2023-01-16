@@ -41,7 +41,7 @@ Parse arguments from command line
 parser = argparse.ArgumentParser(description='Plots the omni directional path loss CDF')
 parser.add_argument(\
     '--plot_dir',action='store',\
-    default='plots', help='directory for the output plots')    
+    default='../../plots', help='directory for the output plots')    
 parser.add_argument(\
     '--plot_fn',action='store',\
     default='dly_cdf.png', help='plot file name')        
@@ -77,16 +77,21 @@ model_city_dict  = {\
     'LonTok': ('uav_lon_tok', None), # OK\
     'Beijing': ('uav_beijing',None), # OK\
     'Boston': ('uav_boston',None),  # Good\    
-    'Moscow': ('uav_moscow',None)}  # Good
-    
-    
+    'Moscow': ('uav_moscow',None),  # Good
+    'London': ('uav_london', None),
+    'LonBos': ('uav_lon_bos', None)
+}
+
 # Dictionaries looking up the dataset for each city  
 ds_city_dict = {\
     'LonTok': 'uav_lon_tok',\
     'Beijing': 'uav_beijing',\
     'Boston':  'uav_boston',\
-    'Moscow':  'uav_moscow'    }   
-    
+    'Moscow':  'uav_moscow',\
+    'London': 'uav_london',\
+    'LonBos': 'uav_lon_bos'
+}
+
 use_true_ls = False
     
      
