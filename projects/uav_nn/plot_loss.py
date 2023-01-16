@@ -3,21 +3,13 @@ import matplotlib.pyplot as plt
 import pickle
 import os
 import sys
-
-import tensorflow as tf
-tfk = tf.keras
-tfkm = tf.keras.models
-tfkl = tf.keras.layers
-import tensorflow.keras.backend as K
 import argparse
-
 
 path = os.path.abspath('../..')
 if not path in sys.path:
     sys.path.append(path)
-    
-from mmwchanmod.learn.models import ChanMod
-from mmwchanmod.datasets.download import get_dataset
+
+print(sys.path)
 
 """
 Parse arguments from command line
@@ -46,7 +38,11 @@ plt.legend()
 
 # Write figure
 plot_dir = 'plots'
+figure_name = 'train_val_loss_'+model_dir.split('_')[1]+'.png'
+
 if not os.path.exists(plot_dir):
     os.mkdir(plot_dir)
-plot_path = os.path.join(plot_dir, 'train_val_loss.png')
+
+plot_path = os.path.join(plot_dir, figure_name)
 plt.savefig(plot_path, bbox_inches='tight')
+print('figure saved to:', plot_path)
