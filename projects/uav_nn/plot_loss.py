@@ -37,7 +37,7 @@ plt.ylabel('loss')
 plt.legend()
 
 # Write figure
-plot_dir = 'plots'
+plot_dir = '../../plots'
 figure_name = 'train_val_loss_'+model_dir.split('_')[1]+'.png'
 
 if not os.path.exists(plot_dir):
