@@ -27,7 +27,7 @@ from mmwchanmod.datasets.download import get_dataset
 GPU_mode = True
 
 if GPU_mode:
-    num_GPU = 3 # choose among available GPUs
+    num_GPU = 4 # choose among available GPUs
     mem_growth = True
     gpus = tf.config.experimental.list_physical_devices("GPU")
     print('Number of GPUs available :', len(gpus))
