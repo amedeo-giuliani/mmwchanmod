@@ -18,12 +18,12 @@ ds_names = ['uav_london', 'uav_boston']
 
 # Concatanated dataset
 # out_name = 'uav_lon_tok'
-out_name = 'uav_lon_bos'
+out_name = 'uav_lonbos'
 
 # Downloads the datasets from the server, if needed
 for ds in ds_names:
     get_dataset(ds, return_data=False)
-        
+
 # Create concatanted dataset
 concat_datasets(ds_names, out_name)
 
