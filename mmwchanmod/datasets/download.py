@@ -179,10 +179,11 @@ def get_dataset(ds_name, src='remote', overwrite=False, return_data=True):
     """    
         
     # Create the local data directory if needed    
-    # data_dir = os.path.join(os.path.dirname(__file__),'..','..','data')
-    # data_dir = os.path.abspath(data_dir)
-    data_dir = os.path.join('data')
-    
+    data_dir = os.path.join(os.path.dirname(__file__),'..','..','data')
+    data_dir = os.path.abspath(data_dir)
+    # data_dir = os.path.join('data')
+    # print(data_dir)
+
     if not os.path.exists(data_dir):
         os.mkdir(data_dir)
         print('Creating directory %s' % data_dir)
@@ -328,8 +329,10 @@ def load_model(mod_name, src='remote', overwrite=False,\
     """    
         
     # Create the local data directory if needed    
-    mod_root = os.path.join(os.path.dirname(__file__),'..','..','models')
-    mod_root = os.path.abspath(mod_root)
+    # mod_root = os.path.join(os.path.dirname(__file__),'..','..','models')
+    # mod_root = os.path.abspath(mod_root)
+    mod_root = os.path.join('models')
+    print(mod_root)
     if not os.path.exists(mod_root):
         os.mkdir(mod_root)
         print('Creating directory %s' % mod_root)
