@@ -14,8 +14,8 @@ print(sys.path)
 """
 Parse arguments from command line
 """
-parser = argparse.ArgumentParser(description='Trains the channel model')
-parser.add_argument('--model_dir', action='store', default= '../../models/uav_boston', help='directory to store models')
+parser = argparse.ArgumentParser(description='Plot the trainining and validation losses')
+parser.add_argument('--model_dir', action='store', default= '../../models/uav_boston', help='directory where trained model is saved')
 
 args = parser.parse_args()
 model_dir = args.model_dir
