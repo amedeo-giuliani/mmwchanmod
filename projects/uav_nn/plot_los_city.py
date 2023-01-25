@@ -44,16 +44,18 @@ for it in range(ntypes):
         test_data = ds['test_data']
 
         # Get the link state and LOS probability
-        link_state = train_data['link_state']
+        # link_state = train_data['link_state']
+        link_state = test_data['link_state']
         los = (link_state == LinkState.los_link)
 
         # Get the distance
-        dvec = train_data['dvec']
+        # dvec = train_data['dvec']
+        dvec = test_data['dvec']
         dx = np.sqrt(np.sum(dvec[:,0:1]**2,axis=1))
         dz = dvec[:,2]
 
         # Get link type
-        It = np.where((train_data['rx_type'] == it) & \
+        It = np.where((test_data['rx_type'] == it) & \
             (dz >= dzrange[0]) &  (dz >= dzrange[1]) )[0]
 
         # Compute the empirical probability
@@ -93,3 +95,4 @@ if not os.path.exists(plot_dir):
     os.mkdir(plot_dir)
 plot_path = os.path.join(plot_dir, 'los_prob_city.png')
 plt.savefig(plot_path, bbox_inches='tight')
+print('plot saved to:', plot_path)
