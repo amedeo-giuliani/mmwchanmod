@@ -1,4 +1,5 @@
 from mmwchanmod.datasets.download import get_dataset
+import matplotlib.pyplot as plt
 
 ds_name = 'uav_boston'
 
@@ -14,6 +15,6 @@ print(train_data['dvec'])
 print(train_data['los_ang'].shape) # 1 LOS path
 print(train_data['nlos_ang'].shape) # 20 NLOS paths
 print(train_data['nlos_dly'].shape)
-print(train_data['nlos_pl'])
 print(train_data['link_state'].shape)
 print(cfg)
+print(train_data['rx_type'])
