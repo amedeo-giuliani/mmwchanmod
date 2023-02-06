@@ -1,3 +1,4 @@
 build/
 mmwchanmod.egg-info
 models/
+*.csv
