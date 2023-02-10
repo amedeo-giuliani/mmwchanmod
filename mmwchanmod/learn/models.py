@@ -6,11 +6,11 @@ import tensorflow as tf
 tfk = tf.keras
 tfkm = tf.keras.models
 tfkl = tf.keras.layers
-import tensorflow.keras.backend as K
+import keras.backend as K
 import numpy as np
 import sklearn.preprocessing
 import pickle
-from tensorflow.keras.optimizers import Adam
+from keras.optimizers import Adam
 import os
 
 from mmwchanmod.sim.chanmod import MPChan

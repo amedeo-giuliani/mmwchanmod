@@ -14,7 +14,7 @@ import tensorflow as tf
 tfk = tf.keras
 tfkm = tf.keras.models
 tfkl = tf.keras.layers
-import tensorflow.keras.backend as K
+import keras.backend as K
 import argparse
 
 path = os.path.abspath('../..')
